@@ -1,0 +1,13 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "baseUrl": "/Users/juliosarmiento/Developer/FrontEnd/spotify-clone/popular-visual",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  }
+}
