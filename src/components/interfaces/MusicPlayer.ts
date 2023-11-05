@@ -1,6 +1,8 @@
 export interface PlayerStoreState {
   currentMusic: MusicProps;
   isPlaying: boolean;
+  volume: number;
+  setVolume: (value: number) => void;
   setIsPlaying: (value: boolean) => void;
   setCurrentMusic: (currentMusic: MusicProps) => void;
 }

@@ -4,7 +4,6 @@ import type {
   CardPlayButtonProps,
   PlayerStoreState,
 } from "./interfaces/MusicPlayer";
-import { playlists } from "@/lib/data";
 
 export function CardPlayButton({ id }: CardPlayButtonProps) {
   const { currentMusic, isPlaying, setIsPlaying, setCurrentMusic } =
@@ -16,8 +15,8 @@ export function CardPlayButton({ id }: CardPlayButtonProps) {
       setIsPlaying(false);
       return;
     }
-
-    fetch(`api/get-info-playlist.json?id=${id}`)
+    const url = `/api/get-info-playlist.json?id=${id}`;
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
         const { songs, playlist } = data;
@@ -28,7 +27,7 @@ export function CardPlayButton({ id }: CardPlayButtonProps) {
 
   return (
     <button
-      className="rounded-full bg-green-500 p-4 cursor-pointer"
+      className="rounded-full bg-green-500 p-4 cursor-pointer hover:scale-105 transition hover:bg-green-400"
       onClick={handleCardMediaBtn}
     >
       {isPlayingPlaylist ? <Pause /> : <Play />}
